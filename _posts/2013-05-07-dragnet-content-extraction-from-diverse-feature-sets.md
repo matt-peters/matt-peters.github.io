@@ -22,6 +22,8 @@ using the DOM and a specified set of tags that modify the on screen layout (e.g.
 
 We will use the following web page as a case study to illustrate the different types of features in our model.
 
+{% include image.html url="/images/benchmarking-dragnet/R105_screenshot_small.png" description="Screenshot of a blog post with four user generated comments (click for a full size version)." link="/images/benchmarking-dragnet/R105_screenshot.png" %}
+
 This is a blog with a fairly typical layout: a section of main article content, followed by four user generated comments. For our purposes, we consider comments to be content and aim to extract them.
 
 The first type of features we use are the "shallow text" features from [1], namely the text and link density. The intuition here is that content blocks have a higher text density and lower link density then non-content blocks since many non-content blocks consist of short snippets of words or are mainly anchor text.
