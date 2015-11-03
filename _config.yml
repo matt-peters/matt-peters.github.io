@@ -1,0 +1,58 @@
+# Site wide configuration
+
+# this occurs in the <title> tag after the post name
+title: Matthew Peters
+locale: en_US
+#description: Machine learning FTW!
+#logo: site-logo.png
+search: false  # show search functionality?
+# for sharing buttons
+url: http://localhost:4000
+#url: http://matt-peters.github.io
+
+# Jekyll configuration
+permalink:   /:title/   # map page to this URL
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..2
+  enable_coderay: false
+
+mathjax: false
+
+#include: [".htaccess"]
+#exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+exclude: ["README.md", "vendor"]
+
+# Site owner
+owner:
+  name: Matthew Peters
+  #avatar: bio-photo.jpg
+  #email: you@email.com
+  #disqus-shortname:
+  twitter: mattthemathman
+  facebook: #username
+  github: matt-peters
+  stackexchange: #http://stackoverflow.com/users/123456/username
+  linkedin: petersmatthew
+  instagram: #username
+  flickr: #username
+  tumblr: #username
+  pinterest: #username
+  google:
+    plus: #username
+    analytics:
+    verify:      # for GWT verification - see head.html
+    ad-client:
+    ad-slot:
+  # for bing verification
+  bing-verify:
