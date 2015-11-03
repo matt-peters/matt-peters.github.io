@@ -47,10 +47,12 @@ The second panel plots the corresponding link density. Many of the non-content b
 
 The second type of features we include are heuristically designed to capture semantic information in the HTML code left behind by programmers. Empirically we note that many of the id and class attributes in modern HTML tags include tokens
 such as "comment", "header", and "nav". These descriptive names are used by
-programmers when writing CSS and Javascript and since they are chosen to be meaningful to the programmer, they embed some semantic information about the block’s content. The following table lists a few selected tokens in the class attribute along with their content to no-content odds ratios. Tokens in the upper portion of the table are more likely to occur in non-content blocks, while those in the bottom are more likely to occur in content blocks.
+programmers when writing CSS and Javascript and since they are chosen to be meaningful to the programmer, they embed some semantic information about the block’s content. The following table lists a few selected tokens in the `class` attribute along with their content to no-content odds ratios.
+Tokens in the upper portion of the table are more likely to occur in non-content blocks, while those in the bottom are more likely to occur in content blocks.
 
 {% include image.html 
 url="/images/dragnet-diverse-features/table1.png"
+description="Odds ratio of content to non-content for selected tokens in class attribute.  Tokens in the upper portion of the table are more likely to occur in non-content blocks, while those in the bottom are more likely to occur in content blocks."
 %}
 
 Practically, each token is encoded as a 0-1 feature. To visualize these, we split them into two groups whether they are associated with non-content or content blocks (based on the odds ratio), flip the sign of the non-content tokens, and sum the binary features. This "id/class density" is plotted in the third panel in the chart above. Positive/negative values are generally associated with content/non-content blocks.
@@ -59,6 +61,7 @@ The third set of features we include are motivated by [2], which includes a few 
 
 {% include image.html 
 url="/images/dragnet-diverse-features/R105_cetr-1024x1024.png"
+description="Visualization of sample page via CETR"
 %}
 
 
@@ -68,6 +71,7 @@ Overall, performance increases as features are added to the ensemble:
 
 {% include image.html 
 url="/images/dragnet-diverse-features/table2.png"
+description="Dragnet model performance"
 %}
 
 The table compares the token level F1 score across a variety of data sets, including two from previous studies (Cleaneval-EN and Big 5) and our own data from late 2012. It includes different feature combinations, including the shallow text (ST), id/class (IC), and content-tag ratio (CETR) features.
