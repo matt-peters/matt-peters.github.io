@@ -43,7 +43,7 @@
         {% if page.share %}{% include social-share.html %}{% endif %}
         {% if page.ads == true %}{% include ad-sidebar.html %}<!-- /.google-ads -->{% endif %}
       </footer>
-      <div class="entry-content">
+      <div class="entry-content center-img">
         {{ content }}
         {% if (site.owner.disqus-shortname and page.comments) or site.comments %}
           <div id="disqus_thread"></div><!-- /#disqus_thread -->

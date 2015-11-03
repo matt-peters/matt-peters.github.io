@@ -1,0 +1,12 @@
+
+<figure class="post-image" >
+{% if include.link %}
+<a href="{{ site.url }}/{{ include.link }}">
+{% endif %}
+<img src="{{ site.url }}/{{ include.url }}" alt="{{ include.description }}">
+{% if include.link %}
+</a>
+{% endif %}
+<figcaption>{{ include.description }}</figcaption>
+</figure>
+
