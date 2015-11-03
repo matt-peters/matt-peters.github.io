@@ -26,10 +26,7 @@ Our primary data source is the test set from our 2013 paper, [*Content Extractio
 
 For example, here is a sample blog post with four comments from the 2012 dataset:
 
-{% include image.html 
-url="/images/benchmarking-dragnet/R105_screenshot_small.png"
-description="Screenshot of a blog post with four user generated comments (click for a full size version)."
-link="/images/benchmarking-dragnet/R105_screenshot.png" %}
+{% include image.html url="/images/benchmarking-dragnet/R105_screenshot_small.png" description="Screenshot of a blog post with four user generated comments (click for a full size version)." link="/images/benchmarking-dragnet/R105_screenshot.png" %}
 
 ## Determining Main article Content vs Comments
 
@@ -44,10 +41,7 @@ These "blocks" are individual page chunks separated by HTML tags used for visual
 markup like `<div>`, `<p>`, `<h1>`, etc.  For example, here is the block
 representation of the sample post above:
 
-{% include image.html
-url="/images/benchmarking-dragnet/blocks_screen_small.png"
-description="Block representation of the sample post. The content extraction algorithm in Dragnet uses a machine learning model to decide which blocks are content and which are chrome (click for a full size version)."
-link="/images/benchmarking-dragnet/blocks_screen.png" %}
+{% include image.html url="/images/benchmarking-dragnet/blocks_screen_small.png" description="Block representation of the sample post. The content extraction algorithm in Dragnet uses a machine learning model to decide which blocks are content and which are chrome (click for a full size version)." link="/images/benchmarking-dragnet/blocks_screen.png" %}
 
 Even without reading the tiny font, you can likely pick out the main content in the block representation based on the amount of text and links. Indeed, these are the most important features in Dragnet.
 
@@ -69,7 +63,7 @@ As further illustration of the similarity between main content and comments, the
 segmented by their labels in the gold standard.
 The content and comment distributions (green and red bars) are more similar to each other than they are to the chrome distribution (blue bars).
 
-{% include image.html url="/images/benchmarking-dragnet/histograms_content_comments_chrome_features_small.png" description="Histograms of Link Density (top) and Text Density (bottom) in the Dragnet 2012 data, segmented by block label. Blue bars include all navigation chrome (sidebars, footers, etc), green bars include all main article content and red bars all user generated comments." %}
+{% include image.html url="/images/benchmarking-dragnet/histograms_content_comments_chrome_features_small.png" description="Histograms of Link Density (top) and Text Density (bottom) in the Dragnet 2012 data, segmented by block label. Blue bars include all navigation chrome (sidebars, footers, etc), green bars include all main article content and red bars all user generated comments." %} 
 
 ## Benchmarking
 
@@ -80,19 +74,13 @@ and [Goose](https://github.com/grangier/python-goose), as well as
 
 The following table compares the token-level performance and speed of Task 1 (content and comments extraction). From left to right, it lists the precision (percentage of all tokens extracted that actual content/comments), recall (percentage of all gold standard tokens actually extracted), F1 score (harmonic mean of precision and recall) and speed (number of pages per second). The “Dragnet v1” row is the highest performing model in our 2013 paper, with the bottom Dragnet model to be described shortly.
 
-{% include image.html
-url="/images/benchmarking-dragnet/content_extraction_compare_task_1.png"
-description="Table 1: Comparison of Readability, Goose, Eatiht and Dragnet for Task 1 (extract content and comments)"
-%}
+{% include image.html url="/images/benchmarking-dragnet/content_extraction_compare_task_1.png" description="Table 1: Comparison of Readability, Goose, Eatiht and Dragnet for Task 1 (extract content and comments)" %}
 
 Overall, the Dragnet model is significantly faster than Readability and Goose and has a higher F1 score than the other algorithms at this task.
 
 Now we turn to Task 2 in the following table (content only/no comments). Compared to Readability and Goose, the Dragnet v1 algorithm has a substantially lower F1 score, due to the low precision. The Eatiht algorithm is far and away the fastest implementation, but lags in accuracy.
 
-{% include image.html 
-url="/images/benchmarking-dragnet/content_extraction_compare_task2.png"
-description="Table 2: Comparison of Readability, Goose, Eatiht and Dragnet for Task 2 (extract main article content, ignoring any comments)."
-%}
+{% include image.html url="/images/benchmarking-dragnet/content_extraction_compare_task2.png" description="Table 2: Comparison of Readability, Goose, Eatiht and Dragnet for Task 2 (extract main article content, ignoring any comments)." %}
 
 ## Improving Dragnet with Readability
 
@@ -120,11 +108,7 @@ that uses only the local features of each block.
 
 To illustrate the difference, the following figure shows the tree representation of our running example:
 
-{% include image.html
-url="/images/benchmarking-dragnet/tree_screen_small.png"
-description="Tree representation of the article where the depth of each block (leaf) is indicated by the leading dashes. Readability extracts the subtree with the highest content score (click for a full size version)."
-link="/images/benchmarking-dragnet/tree_screen.png"
-%}
+{% include image.html url="/images/benchmarking-dragnet/tree_screen_small.png" description="Tree representation of the article where the depth of each block (leaf) is indicated by the leading dashes. Readability extracts the subtree with the highest content score (click for a full size version)." link="/images/benchmarking-dragnet/tree_screen.png" %}
 
 In the case of the example blog post, the main article content and comments are found in different subtrees.
 By restricting the search to a single subtree, the Readability algorithm can
