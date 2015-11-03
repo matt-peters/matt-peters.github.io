@@ -150,4 +150,6 @@ Our main takeaways from this short project are:
 * The Dragnet algorithms compare favorably against other Python packages both in speed and skill.
 * Document wide features – in particular the tree structure as exploited by Readability and the improved Dragnet models – are powerful features for separating main article content and comments.
 
+*Note: this article was originally published on the [Moz devblog](https://moz.com/devblog/benchmarking-python-content-extraction-algorithms-dragnet-readability-goose-and-eatiht/).*
+
 
