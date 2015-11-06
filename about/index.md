@@ -5,7 +5,7 @@ excerpt: "Matthew Peters is a software engineer who builds large scale machine l
 ---
 
 I am Matthew Peters, currently the Director of Data Science at
-[Moz](https://moz.com).  I manage and am the tech lead for the team
+[Moz](https://moz.com).  I am the tech lead and manager of the team
 that owns our machine learning systems, all the way from prototype
 to production.
 
@@ -19,7 +19,7 @@ models we use to score 200+ billion URLs every month.
 * [Dragnet, an state of the art webpage de-chroming algorithm](/benchmarking-python-content-extraction-algorithms-dragnet-readability-goose-and-eatiht/)
 * State of the art keyword extraction algorithms from web pages
 * Web page author detection
-* RSS feed ranking
+* [RSS feed ranking](http://matt-peters.github.io/a-look-under-the-hood-of-feed-authority/)
 
 I have Ph.D. in Applied Math from the University of Washington.
 
