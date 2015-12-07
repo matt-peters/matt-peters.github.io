@@ -36,17 +36,17 @@ For example, here is a snippet of text from [a Seattle Times article](http://www
 
 However, there are many pages where these rules fail. Some do not include any special author markup. For example, this page does not include any markup in the byline:
 
-{% include image.html url="/images/author-extraction/no_markup21.png" description="Example blog post without markup in byline" %}
+{% include image.html url="/images/author-extraction/no_markup21.png" %}
 
 It also illustrates another challenge where the author is not a person's name but rather an organization. Other examples along these lines are phrases like "Editor" or "News Staff."
 
 In other cases, the page markup is misleading. For example, this news page includes a byline without any markup and a link with `rel="author"` to "Admin" below the story:
 
-{% include image.html url="/images/author-extraction/missleading_markup.png" description="News article with misleading markup" %}
+{% include image.html url="/images/author-extraction/missleading_markup.png" %}
 
 Pages with links to related content and many bylines also present a challenge to distinguish them from the main article byline:
 
-{% include image.html url="/images/author-extraction/sidebar_bylines.png" description="Sidebar bylines" %}
+{% include image.html url="/images/author-extraction/sidebar_bylines.png" %}
 
 Finally, some pages do not include any author, and our algorithm should gracefully handle these cases. Blog home pages and category pages are particularly tricky cases, since they often include many links and bylines on a single page but don’t have a single author.
 
@@ -59,7 +59,7 @@ Supervised machine learning provides a way to move beyond a rule-based system. W
 
 While it may be possible to train an end-to-end deep learning algorithm on the raw data, we decided to start with a conventional system with prescribed architecture and hand engineered features. This allowed us to quickly develop and ship an algorithm for the product launch.
 
-{% include image.html url="/images/author-extraction/model_overview.png" description="Overview of author detection model" %}
+{% include image.html url="/images/author-extraction/model_overview.png" %}
 
 The above figure illustrates the model using [a previous post on our blog](/deep-learning-for-customer-churn-prediction/) as a case study. At a high level, the model processes a page with three main steps (working from top to bottom of the figure):
 
