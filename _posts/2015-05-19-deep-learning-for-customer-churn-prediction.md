@@ -92,8 +92,17 @@ The improvement in performance of the RNN is most pronounced in the seasoned coh
 
 ## Model Details
 
-Our model is implemented in Python and leverages Theano, the abstractions in
-[breze](https://github.com/breze-no-salt/breze) for different layer and model types, and [climin](https://github.com/BRML/climin) for stochastic gradient descent. We used rectified linear units as the hidden layer with initialization as suggested in [this paper](http://arxiv.org/abs/1504.00941). As we have different length time series for each customer, we first padded all input vectors to a fixed length, then took care to mask out the padded values when computing the softmax loss output. Padding the input vectors to a fixed size allows use of efficient BLAS linear algebra libraries.
+*(updated February 2016)*
+
+The model is in Python and leverages Theano. The original implementation used
+the abstractions in [breze](https://github.com/breze-no-salt/breze)
+for different layer and model types, and
+[climin](https://github.com/BRML/climin) for stochastic gradient descent.
+It used rectified linear units as the hidden layer with initialization as suggested in
+[this paper](http://arxiv.org/abs/1504.00941). Subsequently, we replaced the
+vanilla RNN with a LSTM and moved to
+[keras](https://github.com/fchollet/keras) for the implementation and training.
+As we have different length time series for each customer, we first padded all input vectors to a fixed length, then took care to mask out the padded values when computing the softmax loss output. Padding the input vectors to a fixed size allows use of efficient BLAS linear algebra libraries.
 
 ## Summary and next steps
 
